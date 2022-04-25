@@ -314,6 +314,29 @@ ul {
 	letter-spacing: 0.03em;
 	color: var(--font-cl-com);
 }
+.we-do-item {
+	position: relative;
+}
+
+.we-do-text {
+	position: absolute;
+
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 70px;
+
+	background: rgba(47, 48, 58, 0.8);
+	font-weight: 700;
+	letter-spacing: 0.03em;
+	text-transform: uppercase;
+	color: #ffffff;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 /*  section 2 team */
 .team {
 	background-color: var(--add-bckg-btn);
