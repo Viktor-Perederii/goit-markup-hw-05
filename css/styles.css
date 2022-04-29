@@ -113,6 +113,7 @@ button {
 	border-bottom: 1px solid var(--portfolio-line);
 }
 .logo {
+	font-family: "Raleway", sans-serif;
 	font-style: normal;
 	font-weight: 700;
 	font-size: 26px;
@@ -120,11 +121,6 @@ button {
 	color: var(--add-bckg-cl);
 }
 .logo-web {
-	font-family: "Raleway", sans-serif;
-	font-style: normal;
-	font-weight: 700;
-	font-size: 26px;
-	line-height: 1.19;
 	color: var(--accent-hover);
 }
 
