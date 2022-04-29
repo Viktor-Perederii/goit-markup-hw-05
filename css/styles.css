@@ -11,6 +11,8 @@
 	--add-bckg-cl: #2f303a;
 	--add-bckg-btn: #f5f4fa;
 	--portfolio-line: #ececec;
+	--transition-func: cubic-bezier(0.4, 0, 0.2, 1);
+	--transition-time: 250ms;
 }
 
 html {
@@ -47,12 +49,12 @@ ul {
 	margin: 0;
 	padding: 0;
 }
-a,
+/* a,
 button {
 	transition-property: color, background-color, box-shadow;
 	transition-duration: 250ms;
-	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
+	transition-timing-function: var(--transition-func);
+} */
 
 .container {
 	width: 1200px;
@@ -71,7 +73,7 @@ button {
 .link {
 	text-decoration: none;
 }
-.link.active {
+.nav-list .link.active {
 	color: var(--accent-hover);
 }
 .nav-list .link.active {
@@ -136,12 +138,15 @@ button {
 	margin-right: 50px;
 }
 
-.nav-list a {
+.nav-list .link {
 	color: var(--font-cl-com);
 	font-style: normal;
 	font-weight: 500;
 	font-size: 14px;
 	line-height: 1.14;
+	transition-property: color;
+	transition-duration: 250ms;
+	transition-timing-function: var(--transition-func);
 }
 .nav-list :hover,
 .nav-list :focus {
@@ -158,12 +163,15 @@ button {
 	margin-right: 50px;
 }
 
-.contacts a {
+.contacts .link {
 	color: var(--font-cl-sc);
 	font-size: 14px;
 	line-height: 1.14;
 	font-weight: 500;
 	letter-spacing: 0.02em;
+	transition-property: color;
+	transition-duration: var(--transition-time);
+	transition-timing-function: var(--transition-func);
 }
 /* .contacts :hover,
 .contacts :focus {
@@ -180,6 +188,9 @@ button {
 	margin-right: 10px;
 	fill: var(--font-cl-sc);
 	vertical-align: middle;
+	transition-property: color, fill;
+	transition-duration: var(--transition-time);
+	transition-timing-function: var(--transition-func);
 }
 
 .mail:hover,
@@ -201,7 +212,6 @@ button {
 /* hero */
 .hero {
 	max-width: 1600px;
-	height: 600px;
 	margin: 0 auto;
 
 	background-image: linear-gradient(
@@ -244,12 +254,13 @@ button {
 	border-radius: 4px;
 	padding: 10px 32px;
 	border: none;
+	transition-property: background-color;
+	transition-duration: var(--transition-time);
+	transition-timing-function: var(--transition-func);
 }
 .hero-btn:hover,
 .hero-btn:focus {
-	background: #188ce8;
-	border-radius: 4px;
-	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+	background-color: #188ce8;
 }
 
 /*  section 1 benefits/we-do*/
@@ -330,7 +341,7 @@ button {
 	bottom: 0;
 	left: 0;
 	width: 100%;
-	height: 70px;
+	padding: 27px 0;
 
 	background: rgba(47, 48, 58, 0.8);
 	font-weight: 700;
@@ -338,9 +349,7 @@ button {
 	text-transform: uppercase;
 	color: #ffffff;
 
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	text-align: center;
 }
 
 /*  section 2 team */
@@ -400,17 +409,29 @@ button {
 	width: 44px;
 	height: 44px;
 	border-radius: 50%;
-	fill: #afb1b8;
 
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	transition-property: background-color, fill;
+	transition-duration: var(--transition-time);
+	transition-timing-function: var(--transition-func);
 }
 .team-socials-link:hover,
 .team-socials-link:focus {
 	background-color: #2196f3;
+}
+.team-socials-svg {
+	fill: #afb1b8;
+	transition-property: fill;
+	transition-duration: var(--transition-time);
+	transition-timing-function: var(--transition-func);
+}
+.team-socials-link:hover .team-socials-svg,
+.team-socials-link:focus .team-socials-svg {
 	fill: #ffffff;
 }
+
 /*  clients */
 .clients-list {
 	display: flex;
@@ -427,14 +448,19 @@ button {
 	border: 1px solid #afb1b8;
 	border-radius: 4px;
 
+	transition-property: fill, color;
+	transition-duration: var(--transition-time);
+	transition-timing-function: var(--transition-func);
+}
+.client-svg {
 	fill: currentColor;
 }
 .client-item:not(:last-child) {
 	margin-right: 30px;
 }
 .client-item:hover {
-	fill: #2196f3;
-	border: 1px solid #2196f3;
+	color: #2196f3;
+	border-color: #2196f3;
 }
 
 /*  footer */
@@ -453,7 +479,7 @@ button {
 	font-style: normal;
 	margin-top: 20px;
 }
-.adress a {
+.adress .link {
 	font-weight: 400;
 	font-size: 14px;
 	line-height: 1.71;
@@ -462,7 +488,7 @@ button {
 .footer-contact {
 	margin-top: 9px;
 }
-.footer-contact a {
+.footer-contact .link {
 	font-weight: 400;
 	font-size: 14px;
 	line-height: 1.71;
@@ -507,6 +533,9 @@ button {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	transition-property: background-color;
+	transition-duration: var(--transition-time);
+	transition-timing-function: var(--transition-func);
 }
 .footer-socials-link:hover,
 .footer-socials-link:focus {
@@ -544,7 +573,11 @@ button {
 
 	padding: 6px 22px;
 }
-
+.btn {
+	transition-property: color, background-color, box-shadow;
+	transition-duration: var(--transition-time);
+	transition-timing-function: var(--transition-func);
+}
 .filter-btn :hover,
 .filter-btn :focus {
 	background-color: var(--accent-hover);
@@ -556,7 +589,8 @@ button {
 .project-item {
 	flex-basis: calc((100% - 60px) / 3);
 	transition-property: box-shadow;
-	transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition-duration: var(--transition-time);
+	transition-timing-function: var(--transition-func);
 }
 .project-item:hover {
 	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
@@ -580,10 +614,6 @@ button {
 	margin-right: 30px;
 }
 
-/* .project-item:not(img) {
-	border: 1px solid #eeeeee;
-} */
-
 .project-name {
 	font-weight: 700;
 	font-size: 18px;
@@ -601,38 +631,25 @@ button {
 	position: relative;
 	overflow: hidden;
 }
-.card-box::before {
-	position: absolute;
-	content: "";
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
 
-	background-color: rgba(33, 150, 243, 0.9);
-	transform: translateY(100%);
-
-	transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
 .overlay-text {
 	position: absolute;
 	top: 0;
 	left: 0;
 
 	padding: 63px 24px;
-
 	font-size: 18px;
 	line-height: 1.56;
 	letter-spacing: 0.03em;
 	color: #ffffff;
 
+	background-color: rgba(33, 150, 243, 0.9);
 	transform: translateY(100%);
-	transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition-property: transform;
+	transition-duration: 250ms;
+	transition-timing-function: var(--transition-func);
 }
 
-.project-item:hover .card-box::before {
-	transform: translateY(0);
-}
 .project-item:hover .overlay-text {
 	transform: translateY(0);
 }
@@ -682,19 +699,19 @@ button {
 	position: absolute;
 	top: 8px;
 	right: 8px;
-
-	border: none;
-	padding: 0 0;
-	background-color: transparent;
-}
-.modal-close {
 	width: 30px;
 	height: 30px;
-	border: 1px solid rgba(0, 0, 0, 0.1);
-	border-radius: 50%;
-	fill: #000000;
 
 	display: flex;
 	justify-content: center;
 	align-items: center;
+
+	padding: 0 0;
+	background-color: transparent;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	border-radius: 50%;
+	cursor: pointer;
+}
+.modal-close {
+	fill: #000000;
 }
